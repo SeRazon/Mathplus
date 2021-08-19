@@ -45,6 +45,9 @@ function loadMathJax() {
                 'script', 'noscript', 'style', 'textarea', 'pre', 'annotation', 'annotation-xml'
             ]
         },
+        loader: {
+            load: ["ui/lazy"]
+        }, // lazy loading is supported in MathJax 3.2.0+
         tex: {
             tags: 'ams',
             displayMath: [['$$','$$'], ["\\[","\\]"], ['`$$','$$`']],
@@ -64,8 +67,8 @@ function resetMathJax() {
 setInterval(() => {
     var ts = new Date().getTime();
     
-    if(!mathLock && nextDraw < ts) {
-        nextDraw = ts + 20000;
+    if(!mathLock && nextDraw < ts && nextDraw !== 0) {
+        nextDraw = 0; // Don't do meanless redraw, will cause layout shift when with lazyload
         mathLock = true;
         try {
             renderMath();
