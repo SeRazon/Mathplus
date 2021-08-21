@@ -1,6 +1,6 @@
 {
     "name": "starsriver/mathplus",
-    "version": "0.3.2",
+    "version": "0.4.0",
     "description": "Mathplus extension for flarum,more support.",
     "keywords": [
         "extension",
@@ -11,6 +11,9 @@
     ],
     "license": "mit",
     "type": "flarum-extension",
+    "support": {
+        "source": "https://github.com/StarsRivers/Mathplus/"
+      },
     "authors": [
         {
             "name": "Arek Tekieli",
